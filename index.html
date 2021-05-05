@@ -19,8 +19,28 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
   if (restore) selObj.selectedIndex=0;
 }
 </script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 
+<script type="text/javascript">
+$(document).ready(function() {
+setInterval('imageRotator()', 4000);
+});
 
+function imageRotator() {
+var curImg = $('#imageShow li.current');
+var nextImg = curImg.next();
+
+if (nextImg.length == 0) {
+nextImg = $('#imageShow li:first');
+};
+
+curImg.removeClass('current').addClass('previous');
+nextImg.css({opacity:0}).addClass('current').animate({opacity:1}, 3000, function() {
+curImg.removeClass('previous');
+});
+
+};
+</script>
 
 <script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
 
@@ -52,151 +72,128 @@ function btnSearch_onclick(){
 }
 
 </script>
-<script type="text/javascript" src="images/jquery.min.js"></script>
-	<script>
-		!window.jQuery && document.write('<script src="images/jquery-1.4.3.min.js"><\/script>');
-	</script>
-	<script type="text/javascript" src="images/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
-
-	<script type="text/javascript" src="images/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
-	<link rel="stylesheet" type="text/css" href="images/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
-    
-    <script type="text/javascript">
-		$(document).ready(function() {
-			
-			$("a#example1").fancybox();
-			
-		});
-	</script>
 </head>
 <body>
+<span style="position: absolute; top: -80px; overflow: auto">
+<A href="http://aodoipro.com">áo cặp đôi</a>, <A href="http://www.namlimxanhvn.com">nam lim xanh tien phuoc</a>, <A href="http://www.dangkybanquyenvn.com/dang-ky-bao-ho-nhan-hieu.html">dang ky nhan hieu</A>, <A href="http://www.dangkybanquyenvn.com/dang-ky-ban-quyen-tac-gia.html">dang ky ban quyen tac gia</a>, <A href="http://remgiadinh.vn">rèm cửa giá rẻ</a>, <A href="http://remgiadinh.vn/rem-phong-tam">rèm phòng tắm</a>, <A href="http://www.1topseo.info">dich vu seo top</A>, <A href="http://thietkewebsiteseo.info">thiet ke web</a>, <A href="http://langkinhduhoc.edu.vn">du hoc singapore</a>, <A href="http://www.duhoc5chau.edu.vn/du-hoc-chau-a/du-hoc/47-du-hoc-nhat-ban.htm">du hoc nhat ban</a>, <A href="http://meditech.com.vn/danh-sach-san-pham/246/may-sieu-am-mau-4-chieu">may sieu am mau 4d</a>, <A href="http://nguonvonnganhang.com">tu van vay von ngan hang</A>
+</span>
 <div id="wrapper">
   <div id="header">
-  	<div id="logo">
-    <OBJECT title="flash" codeBase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" 
+    <div id="logo">
+      <object title="flash" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" 
                                                height="70" width="230" 
-classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" VIEWASTEXT> 
-         <PARAM NAME="_cx" VALUE="14552"> 
-
-         <PARAM NAME="_cy" VALUE="4577"> 
-         <PARAM NAME="FlashVars" VALUE=""> 
-         <PARAM NAME="Movie" 
-value="swf/logo.swf"> 
-         <PARAM NAME="Src" 
-VALUE="swf/logo.swf"> 
-         <PARAM NAME="WMode" VALUE="transparent"> 
-         <PARAM NAME="Play" VALUE="-1"> 
-         <PARAM NAME="Loop" VALUE="-1"> 
-         <PARAM NAME="Quality" VALUE="High"> 
-         <PARAM NAME="SAlign" VALUE=""> 
-
-         <PARAM NAME="Menu" VALUE="-1"> 
-         <PARAM NAME="Base" VALUE=""> 
-         <PARAM NAME="AllowScriptAccess" VALUE=""> 
-         <PARAM NAME="Scale" VALUE="ShowAll"> 
-         <PARAM NAME="DeviceFont" VALUE="0"> 
-         <PARAM NAME="EmbedMovie" VALUE="0"> 
-         <PARAM NAME="BGColor" VALUE="FFFFFF"> 
-         <PARAM NAME="SWRemote" VALUE=""> 
-         <PARAM NAME="MovieData" VALUE=""> 
-
-         <PARAM NAME="SeamlessTabbing" VALUE="1"> 
-         <PARAM NAME="Profile" VALUE="0"> 
-         <PARAM NAME="ProfileAddress" VALUE=""> 
-         <PARAM NAME="ProfilePort" VALUE="0"> 
-         <PARAM NAME="AllowNetworking" VALUE="all"> 
-         <PARAM NAME="AllowFullScreen" VALUE="false"> 
-         <embed 
+classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" viewastext>
+        <param name="_cx" value="14552" />
+        <param name="_cy" value="4577" />
+        <param name="FlashVars" value="" />
+        <param name="Movie" 
+value="swf/logo.swf" />
+        <param name="Src" 
+value="swf/logo.swf" />
+        <param name="WMode" value="transparent" />
+        <param name="Play" value="-1" />
+        <param name="Loop" value="-1" />
+        <param name="Quality" value="High" />
+        <param name="SAlign" value="" />
+        <param name="Menu" value="-1" />
+        <param name="Base" value="" />
+        <param name="AllowScriptAccess" value="" />
+        <param name="Scale" value="ShowAll" />
+        <param name="DeviceFont" value="0" />
+        <param name="EmbedMovie" value="0" />
+        <param name="BGColor" value="FFFFFF" />
+        <param name="SWRemote" value="" />
+        <param name="MovieData" value="" />
+        <param name="SeamlessTabbing" value="1" />
+        <param name="Profile" value="0" />
+        <param name="ProfileAddress" value="" />
+        <param name="ProfilePort" value="0" />
+        <param name="AllowNetworking" value="all" />
+        <param name="AllowFullScreen" value="false" />
+        <embed 
 src="swf/logo.swf"
 quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" 
                                                        type="application/x-shockwave-flash" wmode="transparent" 
-width="230" height="70"> 
-         </embed> </OBJECT>
+width="230" height="70"> </embed>
+      </object>
     </div>
     <div id="company_name">
-     <OBJECT title="flash" codeBase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" 
+      <object title="flash" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" 
                                                height="90" width="650" 
-classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" VIEWASTEXT> 
-         <PARAM NAME="_cx" VALUE="14552"> 
-
-         <PARAM NAME="_cy" VALUE="4577"> 
-         <PARAM NAME="FlashVars" VALUE=""> 
-         <PARAM NAME="Movie" 
-value="swf/company.swf"> 
-         <PARAM NAME="Src" 
-VALUE="swf/company.swf"> 
-         <PARAM NAME="WMode" VALUE="transparent"> 
-         <PARAM NAME="Play" VALUE="-1"> 
-         <PARAM NAME="Loop" VALUE="-1"> 
-         <PARAM NAME="Quality" VALUE="High"> 
-         <PARAM NAME="SAlign" VALUE=""> 
-
-         <PARAM NAME="Menu" VALUE="-1"> 
-         <PARAM NAME="Base" VALUE=""> 
-         <PARAM NAME="AllowScriptAccess" VALUE=""> 
-         <PARAM NAME="Scale" VALUE="ShowAll"> 
-         <PARAM NAME="DeviceFont" VALUE="0"> 
-         <PARAM NAME="EmbedMovie" VALUE="0"> 
-         <PARAM NAME="BGColor" VALUE="FFFFFF"> 
-         <PARAM NAME="SWRemote" VALUE=""> 
-         <PARAM NAME="MovieData" VALUE=""> 
-
-         <PARAM NAME="SeamlessTabbing" VALUE="1"> 
-         <PARAM NAME="Profile" VALUE="0"> 
-         <PARAM NAME="ProfileAddress" VALUE=""> 
-         <PARAM NAME="ProfilePort" VALUE="0"> 
-         <PARAM NAME="AllowNetworking" VALUE="all"> 
-         <PARAM NAME="AllowFullScreen" VALUE="false"> 
-         <embed 
+classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" viewastext>
+        <param name="_cx" value="14552" />
+        <param name="_cy" value="4577" />
+        <param name="FlashVars" value="" />
+        <param name="Movie" 
+value="swf/company.swf" />
+        <param name="Src" 
+value="swf/company.swf" />
+        <param name="WMode" value="transparent" />
+        <param name="Play" value="-1" />
+        <param name="Loop" value="-1" />
+        <param name="Quality" value="High" />
+        <param name="SAlign" value="" />
+        <param name="Menu" value="-1" />
+        <param name="Base" value="" />
+        <param name="AllowScriptAccess" value="" />
+        <param name="Scale" value="ShowAll" />
+        <param name="DeviceFont" value="0" />
+        <param name="EmbedMovie" value="0" />
+        <param name="BGColor" value="FFFFFF" />
+        <param name="SWRemote" value="" />
+        <param name="MovieData" value="" />
+        <param name="SeamlessTabbing" value="1" />
+        <param name="Profile" value="0" />
+        <param name="ProfileAddress" value="" />
+        <param name="ProfilePort" value="0" />
+        <param name="AllowNetworking" value="all" />
+        <param name="AllowFullScreen" value="false" />
+        <embed 
 src="swf/company.swf"
 quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" 
                                                        type="application/x-shockwave-flash" wmode="transparent" 
-width="650" height="90"> 
-         </embed> </OBJECT>
-      
-      </div>
-      
-      
+width="650" height="90"> </embed>
+      </object>
+    </div>
     <div id="header_right">
-  
-   <!-- <div id="flag"><a href="Connections/language.php?language=vi"><img src="images/flag_vn.png"  border="0"/></a> &nbsp;&nbsp;<a href="Connections/language.php?language=en"><img src="images/flag_en.png" border="0" /></a></div>-->
-    <div id="member"><a href="./admin" target="_blank">Quản trị</a></div>
-   <div id="flag"><a href="#"><img src="images/flag_vn.png"  border="0"/></a> &nbsp;&nbsp;&nbsp;<a href="#"><img src="images/flag_en.png" border="0" /></a></div>
+      <!-- <div id="flag"><a href="Connections/language.php?language=vi"><img src="images/flag_vn.png"  border="0"/></a> &nbsp;&nbsp;<a href="Connections/language.php?language=en"><img src="images/flag_en.png" border="0" /></a></div>-->
+      <div id="member"><a href="./admin" target="_blank">Quản trị</a></div>
+      <div id="flag"><a href="#" style=" text-decoration:none"><img src="images/flag_vn.png"  border="0" style=" text-decoration:none"/></a> &nbsp;&nbsp;&nbsp;<a href="#"><img src="images/flag_en.png" border="0" /></a></div>
     </div>
     <!--end header_right-->
-    
   </div>
   <!--end header-->
   <div id="bsnner">
     <script type="text/javascript">
 AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0','width','996','height','222','src','swf/banner','quality','high','pluginspage','http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash','movie','swf/banner' ); //end AC code
-</script><noscript><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="576" height="83">
-      <param name="movie" value="swf/banner.swf" />
-      <param name="quality" value="high" />
-      <embed src="swf/banner.swf" quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="576" height="83"></embed>
-    </object>
-  </noscript></div>
+</script>
+    <noscript>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="576" height="83">
+        <param name="movie" value="swf/banner.swf" />
+        <param name="quality" value="high" />
+        <embed src="swf/banner.swf" quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="576" height="83"></embed>
+      </object>
+    </noscript>
+  </div>
   <div id="menu">
     <ul>
       <li><a href="./">Trang chủ</a> </li>
       <li><a href="main.php?frame=intro">Giới thiệu</a> </li>
       <li><a href="main.php?frame=product_all">Sản phẩm</a> </li>
       <li><a href="main.php?frame=dichvu">Dịch vụ </a></li>
-      <li><a href="main.php?frame=duan">Dự án</a></li>  
-      <li><a href="main.php?frame=khotulieu">Kho tư liệu</a></li>     
+      <li><a href="main.php?frame=duan">Dự án</a></li>
+      <li><a href="main.php?frame=khotulieu">Kho tư liệu</a></li>
       <li><a href="main.php?frame=tuyendung">Tuyển dụng</a> </li>
       <li ><a href="main.php?frame=contact">Liên hệ</a></li>
       <li style="background:none"><a href="main.php?frame=login">Thành viên</a> </li>
     </ul>
   </div>
-  
-  
   <div id="left">
-  	<div class="nav">
-    <div class="title">Danh mục ngành nghề</div>
-        <div id="leftmenu">
-        	<ul>
-            	
+    <div class="nav">
+      <div class="title">Danh mục ngành nghề</div>
+      <div id="leftmenu">
+        <ul>
+          
 <script language="javascript">
 function showhideMultiLev(thecell,noChild){
 	if (noChild==1) return true;
@@ -237,15 +234,13 @@ function showhideMultiLev(thecell,noChild){
 
 
 
-                       
-            </ul>
-        </div>
-       <!--end leftmenu-->
+        </ul>
+      </div>
+      <!--end leftmenu-->
     </div>
-    
     <div class="nav">
       <div class="title">Thương mại dịch vụ</div>
-       
+      
 <div class="service"><a href="#">Tư vấn thiết kế</a></div>
 			
  <div class="service_sub"><a href="main.php?frame=tm_dv_detail&id=9">Bảo trì hệ thống điện nhẹ</a></div>  
@@ -261,12 +256,10 @@ function showhideMultiLev(thecell,noChild){
  <div class="service_sub"><a href="main.php?frame=tm_dv_detail&id=11">Bảo trì Hệ thống cơ điện</a></div>  
     
 
-            
-         
     </div>
-     <div class="nav">
+    <div class="nav">
       <div class="title">Cung cấp vật tư thiết bị</div>
-       		
+      		
  <div class="service_sub"><a href="main.php?frame=tbvt&cat=44">Thiết bị điện - Điều khiển</a></div>  
   
 		
@@ -274,12 +267,10 @@ function showhideMultiLev(thecell,noChild){
   
 
 
-            
-         
     </div>
-        <div class="nav">
-        <div class="title">Công trình dự án</div>        
-        <div class="project">
+    <div class="nav">
+      <div class="title">Công trình dự án</div>
+      <div class="project">
 <div class="project_title"> Dự án đang thực hiện</div>  
  <div class="project_img" style="padding-bottom:5px; border-bottom:#CCC solid 1px"><a href="main.php?frame=duan_detail&id=21&th=
  
@@ -303,72 +294,93 @@ function showhideMultiLev(thecell,noChild){
     
 </div>
 
- 
     </div>
-    
   </div>
   <!--end left-->
-   <div id="center">
+  <div id="center">
+    <div class="title_center">SẢN PHẨM TIÊU BIỂU</div>
+    <div id="banner_center">
+      <ul id="imageShow">
+        
 
-    <div class="main_title_center">TỦ ĐIỆN ĐỘNG LỰC</div>
-    
-    <div class="main_box">
-   	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                        <tr>
-                          <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
-                            <tr>
-                              <td width="1%" class="style59">&nbsp;</td>
-                                <td width="97%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                 <tr>
-                                    <td align="right" ><a href="#" onclick="javascript:window.history.go(-1);return false;" class="txt_back"><img src="images/back.png" width="48" height="48" border="0" align="middle" />VỀ TRANG TRƯỚC </a></td>
-                                  </tr>
-                                  <tr>
-                                    <td align="center" class="style51"><a id="example1" href="upload/tudongluc_1326163310.jpg"> <img title="Click to enlarge" border="0"  src="upload/tudongluc_1326163310.jpg"  mce_src="tudongluc_1326163310.jpg" width="200" height="200"/></a></td>
-                                  </tr>
-                                  <tr>
-                                    <td height="30" align="center" class="style61"><strong> <font color="#000" size="3">
-                                    Tủ điện động lực                                    </font></strong></td>
-                                  </tr>
-                                  <tr>
-                                    <td style="color:#666666"><strong>Thông tin chi tiết : </strong></td>
-                                  </tr>
-                                
-                                  <tr>
-                                    <td style="width:500px" class="style22"><p><em>- C&ocirc;ng suất: 0.75 đến 500KW.</em></p>
-<p><em>- Thiết kế đ&aacute;p ứng t&iacute;nh năng bảo vệ &amp; an to&agrave;n về điện.</em></p>
-<p><em>- Sử dụng thiết bị của c&aacute;c h&atilde;ng nổi tiếng: ABB, OMRON ,...</em></p>
-<p><em>- Cung cấp nguồn cho c&aacute;c thiết bị tải &amp; đ&oacute;ng cắt động cơ, đ&egrave;n...</em></p>
-<p><em>- T&iacute;nh năng ATS (chuyển đổi nguồn dự ph&ograve;ng khi nguồn điện ch&iacute;nh mất điện)</em></p>
-<p><em>- Giải ph&aacute;p tối ưu về điện cho: Khu c&ocirc;ng nghiệp, khu chế suất, x&iacute; nghiệp, nh&agrave; m&aacute;y ..</em></p></td>
-                                  </tr>                                  
-                                  <tr>
-                                    <td class="style3">&nbsp;</td>
-                                  </tr>               
-                                </table></td>
-                                <td width="1%" class="style60">&nbsp;</td>
-                            </tr>
-                            </table></td>
-                        </tr>
-</table>
+<ul id="imageShow">
 
-<table align="center" cellSpacing=0 cellPadding=0 width="98%" border=0 >
-<tr><td colspan="2" align="center" height="10"></td></tr><tr><td  align="right" style="padding-right:10px; font-family:Arial, Helvetica, sans-serif;color:#F00;font-size: 12px;"><font color="#000000">Trang : </font> </td></tr></table>    
-    
+
+ <li class="current" ><a  href="main.php?frame=product_detail&amp;id=43" > <img src="upload/tuats1._1326163628.peg" width="505" height="230" border="0"   /></a></li>
+              
+
+ <li  ><a  href="main.php?frame=product_detail&amp;id=41" > <img src="upload/tudienphanphoitong._1326162966.peg" width="505" height="230" border="0"   /></a></li>
+              
+
+ <li  ><a  href="main.php?frame=product_detail&amp;id=34" > <img src="upload/tudieukhienplc1_1326162489.jpg" width="505" height="230" border="0"   /></a></li>
+              
+
+ <li  ><a  href="main.php?frame=product_detail&amp;id=33" > <img src="upload/tu-bien-tan-abb_1326162285.jpg" width="505" height="230" border="0"   /></a></li>
+              
+</ul>
+
+
+              </ul>
     </div>
- 
+    <div class="title_center">TIN TỨC - SỰ KIỆN</div>
     
-    
-    
-  </div>
-
- 
-  <!--end center-->
+            
+         
+         
   
+      
+        <div class="duan_box" >
+   	  <div class="news_title"> <a href="main.php?frame=news_detail&id=29" >KHUYẾN MÃI BẢO TRÌ HỆ THỐNG BÁO CHÁY TỰ ĐỘNG</a></div>
+      <div class="news_img" > <a href="main.php?frame=news_detail&id=29" ><img src="upload/he-thong-thiet-bi-bao-chay-tu-dong-1_1533895413.jpg"  width="113" height="78" align="left"  /></a></div>
+      <div class="duan_description" style="padding-left:10px"><p><span>Nhằm tri &acirc;n kh&aacute;ch h&agrave;ng quan t&acirc;m tới dịch vụ kỹ thuật Đ&Agrave; SƠN, C&ocirc;ng ty giảm gi&aacute; 10%/HD/Năm&nbsp;đầu ti&ecirc;n&nbsp;ph&iacute; nh&acirc;n c&ocirc;ng&nbsp;</span><strong>bảo tr&igrave; HỆ THỐNG B&Aacute;O CH&Aacute;Y TỰ ĐỘNG</strong><span>&nbsp;đối với tất cả c&aacute;c kh&aacute;ch h&agrave;ng k&yacute; hợp đồng đầu ti&ecirc;n từ ng&agrave;y 01/01/2018.</span></p></div>
+      <div class="clear0"></div>
+      <div class="news_detail"> <a href="main.php?frame=news_detail&id=29" >Chi tiết</a></div>
+    </div> 
+            
+                  
+
+            
+         
+         
+  
+      
+        <div class="duan_box" >
+   	  <div class="news_title"> <a href="main.php?frame=news_detail&id=20" >KHUYẾN MÃI BẢO TRÌ MÁY PHÁT ĐIỆN</a></div>
+      <div class="news_img" > <a href="main.php?frame=news_detail&id=20" ><img src="upload/may_phat_dien_máy_phát_Điện_1334118841.jpg"  width="113" height="78" align="left"  /></a></div>
+      <div class="duan_description" style="padding-left:10px"><p>Nhằm tri &acirc;n kh&aacute;ch h&agrave;ng quan t&acirc;m, gắn b&oacute; tới dịch vụ. C&ocirc;ng ty Đ&Agrave; SƠN giảm gi&aacute; 10%/HD/Năm&nbsp;đầu ti&ecirc;n&nbsp;ph&iacute;&nbsp;nh&acirc;n c&ocirc;ng sửa chữa, <strong>bảo tr&igrave;&nbsp;m&aacute;y ph&aacute;t điện</strong> đối với tất cả c&aacute;c kh&aacute;ch h&agrave;ng k&yacute; hợp đồng đầu ti&ecirc;n từ ng&agrave;y 01/01/2017.</p></div>
+      <div class="clear0"></div>
+      <div class="news_detail"> <a href="main.php?frame=news_detail&id=20" >Chi tiết</a></div>
+    </div> 
+            
+                  
+
+            
+         
+         
+  
+      
+        <div class="duan_box" >
+   	  <div class="news_title"> <a href="main.php?frame=news_detail&id=30" >TP.HCM: Bất an vì hệ thống báo cháy tầng hầm chung cư bị bỏ ngỏ</a></div>
+      <div class="news_img" > <a href="main.php?frame=news_detail&id=30" ><img src="upload/chaychungcu-vtvnew_1533896132.png"  width="113" height="78" align="left"  /></a></div>
+      <div class="duan_description" style="padding-left:10px"><ul>
+<li><a title='Hệ thống PCCC chung cư kh&ocirc;ng hoạt động: Sự cố nhỏ g&acirc;y hậu quả kh&ocirc;n lường' href='https://vtv.vn/trong-nuoc/he-thong-pccc-chung-cu-khong-hoat-dong-su-co-nho-gay-hau-qua-khon-luong-20180403082959103.htm'>Hệ thống PCCC chung cư kh&ocirc;ng hoạt động: Sự cố nhỏ g&acirc;y hậu quả kh&ocirc;n lường</a></li>
+<li><a title='H&agrave; Tĩnh: Đ&igrave;nh chỉ cơ sở kinh doanh kh&ocirc;ng đảm bảo PCCC' href='https://vtv.vn/vtv8/ha-tinh-dinh-chi-co-so-kinh-doanh-khong-dam-bao-pccc-20180401175652815.htm'>H&agrave; Tĩnh: Đ&igrave;nh chỉ cơ sở kinh doanh kh&ocirc;ng đảm bảo PCCC</a></li>
+<li><a title='Nhiều chung cư TP.HCM tập huấn PCCC cho người d&acirc;n' href='https://vtv.vn/trong-nuoc/nhieu-chung-cu-tphcm-tap-huan-pccc-cho-nguoi-dan-20180401140906612.htm'>Nhiều chung cư TP.HCM tập huấn PCCC cho người d&acirc;n</a></li>
+</ul></div>
+      <div class="clear0"></div>
+      <div class="news_detail"> <a href="main.php?frame=news_detail&id=30" >Chi tiết</a></div>
+    </div> 
+            
+                  
+<div style="margin-top:10px"><a href="main.php?frame=news"  class="txt_all">Xem tất cả</a></div>
+
+  </div>
+  <!--end center-->
   <div id="right">
-  <div style="height:258px;" class="nav">
-      <div class="title">Khách hàng </div>   
-      <marquee style="height:230px; " direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">     
-  		    <div class="w_230"> 
+    <div style="height:258px;" class="nav">
+      <div class="title">Khách hàng </div>
+      <marquee style="height:230px; " direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
+        		    <div class="w_230"> 
 		 <a href="http://www.lottehotel.com/saigon/en/" target="_blank"> <img border="0" src="upload/kh1_1320136329.jpg"  width="168" > </a></div>
          <div class="w_230">Khách sạn Legend Saigon</div>  
 	                    
@@ -410,13 +422,12 @@ function showhideMultiLev(thecell,noChild){
 	                    
 	
 			
-      </marquee> 
-  </div>
-    
+      </marquee>
+    </div>
     <div class="nav">
       <div class="title">Đối tác</div>
-      <marquee style="height:230px; " direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">  
-  		    <div class="w_doitac"> 
+       <marquee style="height:230px; " direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
+      		    <div class="w_doitac"> 
 		 <a href="http://www.panasonic.com/vn/en/home/" target="_blank"> <img border="0" src="upload/panasonic_1389844765.png"  width="138" > </a></div>
         
 	                    
@@ -434,29 +445,24 @@ function showhideMultiLev(thecell,noChild){
 	                    
 	
 			
-    </marquee>
-        
+      </marquee>
     </div>
-    
     <div class="nav">
-        <div class="title">Tiện ích</div>
-        
-        <div id="search">
-              <form action="main.php" method="get" name="frmSearch">
-					<input type="hidden" name="act" value="search" />
-					<input type="hidden" name="frame" value="search" />
-   		  <div id="search_txt"><input style="color:#999999" name="keyword" type="text" value="Tìm kiếm ..."class="inputfield" title="searchfield" onfocus="clearText(this)" onblur="clearText(this)" /></div>
-        	<div id="search_btn">  <input type="submit" value="" class="submit" onClick="return btnSearch_onclick();" style="cursor:pointer" /></div>
-          
-            </form>
+      <div class="title">Tiện ích</div>
+      <div id="search">
+        <form action="main.php" method="get" name="frmSearch">
+          <input type="hidden" name="act" value="search" />
+          <input type="hidden" name="frame" value="search" />
+          <div id="search_txt">
+            <input style="color:#999999" name="keyword" type="text" value="Tìm kiếm ..."class="inputfield" title="searchfield" onfocus="clearText(this)" onblur="clearText(this)" />
+          </div>
+          <div id="search_btn">
+            <input name="submit" type="submit" class="submit" style="cursor:pointer" onclick="return btnSearch_onclick();" value="" />
+          </div>
+        </form>
       </div>
-        
-    <div class="w_230">
-  
-             
-              
-              
-               		  
+      <div class="w_230">
+        		  
             <select name="weblink" class="weblink" id="weblink" onchange="if (this.value!='') {window.open(this.value);this.options[0].selected=true}" class="weblink"><form name="weblink" method="post" action="" target="_blank">
              
               <option> -- Liên kết website --</option>
@@ -524,10 +530,8 @@ function showhideMultiLev(thecell,noChild){
 			
    </form> </select>
       
-             
-       
-        </div>        
-        
+      </div>
+      
 <div class="w_230">Đang trực tuyến : 387334</div>
       <div class="w_230">Tổng lượt truy cập : 370232</div>								
 <!--<table >
@@ -547,13 +551,13 @@ function showhideMultiLev(thecell,noChild){
 				
 				
 				    </div>
-    
   </div>
   <!--end right-->
   <div class="clear5"></div>
   <div id="footer">
-  	<div id="footer_copyright">&copy; 2011 Đà Sơn. All Rights Reserved<br/> Design by <a href="http://vietnext.vn" target="_new">Vietnext</a></div>
-  <div id='footer_address'><span style='color:#CA1619; font-size:14px; font-weight:bold'>C&Ocirc;NG TY CƠ ĐIỆN - TIN HỌC Đ&Agrave; SƠN</span><br /><span style='font-style: italic; text-decoration: underline;'>Trụ sở:</span><br />Tầng 1, T&ograve;a nh&agrave; Packsimex, 52 Đ&ocirc;ng Du, P. Bến Ngh&eacute;, Q. 01, Tp. HCM<br />ĐT: 028.&nbsp;66858831 - Fax: 028. 62914745 - Email: info@dason.com.vn - Hotline: 0903.326596</div>
+    <div id="footer_copyright">&copy; 2011 Đà Sơn. All Rights Reserved<br/>
+      Design by <a href="http://vietnext.vn" target="_new">Vietnext</a></div>
+    <div id='footer_address'><span style='color:#CA1619; font-size:14px; font-weight:bold'>C&Ocirc;NG TY CƠ ĐIỆN - TIN HỌC Đ&Agrave; SƠN</span><br /><span style='font-style: italic; text-decoration: underline;'>Trụ sở:</span><br />Tầng 1, T&ograve;a nh&agrave; Packsimex, 52 Đ&ocirc;ng Du, P. Bến Ngh&eacute;, Q. 01, Tp. HCM<br />ĐT: 028.&nbsp;66858831 - Fax: 028. 62914745 - Email: info@dason.com.vn - Hotline: 0903.326596</div>
 	
 
 
@@ -561,5 +565,5 @@ function showhideMultiLev(thecell,noChild){
   <!--end footer-->
 </div>
 <!--end wrapper-->
-    </body>
+</body>
 </html>
